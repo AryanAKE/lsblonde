@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LS Blonde Unisex Salon — Guwahati</title>
+  <meta name="description" content="LS Blonde Unisex Salon — Guwahati's top-rated unisex beauty salon at Six Mile. Expert haircuts, coloring, bridal makeup, spa & more. 5.0 ⭐ on Google." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=DM+Sans:wght@200;300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="loading">
+
+  <!-- PAGE LOADER -->
+  <div id="loader" class="loader">
+    <div class="loader__logo">
+      <svg viewBox="0 0 120 40" class="loader__svg">
+        <text x="0" y="32" class="loader__text-ls">LS</text>
+        <text x="38" y="32" class="loader__text-blonde">Blonde</text>
+      </svg>
+    </div>
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+    <p class="loader__sub">Guwahati's Premier Unisex Salon</p>
+  </div>
+
+  <!-- CURSOR -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursorDot" class="cursor-dot"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scrollProgress" class="scroll-progress"></div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header id="header" class="header">
+    <a href="#home" class="header__logo" id="headerLogo">
+      <span class="header__logo-ls">LS</span><span class="header__logo-blonde">Blonde</span>
+    </a>
+    <nav class="header__nav" id="headerNav">
+      <a href="#about"    class="header__link" data-text="About">About</a>
+      <a href="#services" class="header__link" data-text="Services">Services</a>
+      <a href="#work"     class="header__link" data-text="Our Work">Our Work</a>
+      <a href="#reviews"  class="header__link" data-text="Reviews">Reviews</a>
+      <a href="#find-us"  class="header__link" data-text="Find Us">Find Us</a>
+    </nav>
+    <a href="#find-us" class="header__cta" id="headerCta">Book Now</a>
+    <button class="header__burger" id="burger" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="mobileClose" aria-label="Close menu">✕</button>
+    <nav class="mobile-menu__nav">
+      <a href="#about"    class="mobile-menu__link">About</a>
+      <a href="#services" class="mobile-menu__link">Services</a>
+      <a href="#work"     class="mobile-menu__link">Our Work</a>
+      <a href="#reviews"  class="mobile-menu__link">Reviews</a>
+      <a href="#find-us"  class="mobile-menu__link">Find Us</a>
+    </nav>
+    <p class="mobile-menu__addr">Six Mile, Guwahati, Assam 781022</p>
+  </div>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home">
+      <div class="hero__media">
+        <img src="hero.png" alt="LS Blonde Salon interior" class="hero__img" id="heroImg" />
+        <div class="hero__vignette"></div>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__tag reveal-fade" data-delay="800">
+          <span class="dot-pulse"></span> Open Tue – Sun · 10 AM onwards
+        </div>
+        <h1 class="hero__title">
+          <span class="hero__line reveal-up" data-delay="1000">Where Every</span>
+          <span class="hero__line hero__line--gold reveal-up" data-delay="1150">Look Tells</span>
+          <span class="hero__line reveal-up" data-delay="1300">Your Story.</span>
+        </h1>
+        <p class="hero__sub reveal-fade" data-delay="1500">
+          Guwahati's premium unisex salon — crafting confidence through artistry.
+        </p>
+        <div class="hero__actions reveal-fade" data-delay="1700">
+          <a href="#services" class="btn btn--gold" id="heroExploreBtn">Explore Services</a>
+          <a href="#work"     class="btn btn--ghost" id="heroWorkBtn">See Our Work</a>
+        </div>
+      </div>
+
+      <div class="hero__metrics reveal-fade" data-delay="2000">
+        <div class="hero__metric">
+          <strong class="count" data-target="5.0" data-decimal>5.0</strong>
+          <span>Google Rating</span>
+        </div>
+        <div class="hero__divider"></div>
+        <div class="hero__metric">
+          <strong class="count" data-target="37">37</strong><strong>+</strong>
+          <span>Reviews</span>
+        </div>
+        <div class="hero__divider"></div>
+        <div class="hero__metric">
+          <strong>LGBTQ+</strong>
+          <span>Friendly Space</span>
+        </div>
+      </div>
+
+      <div class="hero__scroll-hint" id="scrollHint">
+        <div class="hero__scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ===================== TICKER ===================== -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>✦ Haircut &amp; Styling</span>
+        <span>✦ Hair Coloring</span>
+        <span>✦ Keratin Treatment</span>
+        <span>✦ Bridal Makeup</span>
+        <span>✦ Facial &amp; Skincare</span>
+        <span>✦ Spa Therapy</span>
+        <span>✦ Nail Art</span>
+        <span>✦ Threading &amp; Waxing</span>
+        <span>✦ Men's Grooming</span>
+        <span>✦ Hair Spa</span>
+        <span>✦ Haircut &amp; Styling</span>
+        <span>✦ Hair Coloring</span>
+        <span>✦ Keratin Treatment</span>
+        <span>✦ Bridal Makeup</span>
+        <span>✦ Facial &amp; Skincare</span>
+        <span>✦ Spa Therapy</span>
+        <span>✦ Nail Art</span>
+        <span>✦ Threading &amp; Waxing</span>
+        <span>✦ Men's Grooming</span>
+        <span>✦ Hair Spa</span>
+      </div>
+    </div>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="about" id="about">
+      <div class="container about__grid">
+
+        <div class="about__visual">
+          <div class="about__img-wrap reveal-scale" data-delay="0">
+            <img src="salon-interior.png" alt="LS Blonde salon interior" loading="lazy" />
+          </div>
+          <div class="about__img-float reveal-scale" data-delay="200">
+            <img src="haircut.png" alt="Professional haircut" loading="lazy" />
+          </div>
+          <div class="about__stamp">
+            <div class="stamp__inner">
+              <span class="stamp__top">★ 5.0 ★</span>
+              <span class="stamp__mid">Top Rated</span>
+              <span class="stamp__bot">Guwahati</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__text">
+          <p class="label reveal-up" data-delay="0">Our Story</p>
+          <h2 class="heading reveal-up" data-delay="100">
+            A Sanctuary of<br/><em>Style &amp; Self&#8209;Expression</em>
+          </h2>
+          <p class="about__body reveal-up" data-delay="200">
+            Nestled on Guwahati Shillong Road at Six Mile, LS Blonde Unisex Salon was born from a simple belief — that every person deserves to feel extraordinary. We are more than a salon; we're a place where artistry meets care.
+          </p>
+          <p class="about__body reveal-up" data-delay="300">
+            From a precision haircut to a full bridal transformation, our experienced team brings passion and expertise to every chair. We welcome everyone — because beauty truly has no boundaries.
+          </p>
+          <div class="about__pills reveal-up" data-delay="400">
+            <span class="pill">🌿 Premium Products</span>
+            <span class="pill">✂️ Expert Stylists</span>
+            <span class="pill">🌈 LGBTQ+ Friendly</span>
+            <span class="pill">📍 Six Mile, Guwahati</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section class="services" id="services">
+      <div class="container services__head">
+        <p class="label reveal-up">What We Do</p>
+        <h2 class="heading reveal-up" data-delay="100">
+          Our <em>Signature</em> Services
+        </h2>
+      </div>
+
+      <div class="services__grid container">
+
+        <article class="scard reveal-up" data-delay="0" id="scard-hair">
+          <div class="scard__img">
+            <img src="hair-service.png" alt="Hair Styling" loading="lazy" />
+          </div>
+          <div class="scard__body">
+            <span class="scard__num">01</span>
+            <h3>Hair Styling &amp; Blow-Dry</h3>
+            <p>Sleek blowouts, voluminous waves, bouncy curls — we style your hair to match your personality perfectly.</p>
+            <div class="scard__tag">Most Popular</div>
+          </div>
+        </article>
+
+        <article class="scard reveal-up" data-delay="80" id="scard-color">
+          <div class="scard__img">
+            <img src="color-treatment.png" alt="Hair Coloring" loading="lazy" />
+          </div>
+          <div class="scard__body">
+            <span class="scard__num">02</span>
+            <h3>Hair Coloring &amp; Highlights</h3>
+            <p>Balayage, ombre, global color, highlights — bold expressions crafted with international-grade color.</p>
+            <div class="scard__tag">Trending</div>
+          </div>
+        </article>
+
+        <article class="scard reveal-up" data-delay="160" id="scard-cut">
+          <div class="scard__img">
+            <img src="haircut.png" alt="Haircut" loading="lazy" />
+          </div>
+          <div class="scard__body">
+            <span class="scard__num">03</span>
+            <h3>Precision Haircuts</h3>
+            <p>Tailored cuts for men and women — from classic elegant styles to modern textured cuts and fades.</p>
+            <div class="scard__tag">Unisex</div>
+          </div>
+        </article>
+
+        <article class="scard reveal-up" data-delay="240" id="scard-spa">
+          <div class="scard__img">
+            <img src="facial-spa.png" alt="Facial & Spa" loading="lazy" />
+          </div>
+          <div class="scard__body">
+            <span class="scard__num">04</span>
+            <h3>Facials &amp; Spa Therapy</h3>
+            <p>Deep-cleansing facials, relaxing body spa rituals and skin treatments that leave you glowing.</p>
+            <div class="scard__tag">Luxury</div>
+          </div>
+        </article>
+
+        <article class="scard reveal-up" data-delay="320" id="scard-bridal">
+          <div class="scard__img">
+            <img src="bridal-makeup.png" alt="Bridal Makeup" loading="lazy" />
+          </div>
+          <div class="scard__body">
+            <span class="scard__num">05</span>
+            <h3>Bridal Makeup &amp; Packages</h3>
+            <p>Your wedding day, perfected. Full bridal packages including makeup, hairstyling and skin prep.</p>
+            <div class="scard__tag">Premium</div>
+          </div>
+        </article>
+
+        <article class="scard scard--list reveal-up" data-delay="400" id="scard-more">
+          <div class="scard__more-inner">
+            <h3>And More…</h3>
+            <ul class="scard__list">
+              <li><span>✦</span> Nail Art &amp; Manicure</li>
+              <li><span>✦</span> Pedicure</li>
+              <li><span>✦</span> Threading &amp; Waxing</li>
+              <li><span>✦</span> Eyebrow Shaping</li>
+              <li><span>✦</span> Keratin Treatment</li>
+              <li><span>✦</span> Hair Spa</li>
+              <li><span>✦</span> Men's Grooming</li>
+            </ul>
+            <a href="#find-us" class="btn btn--gold" id="scardEnquireBtn">Enquire Now</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================== GALLERY / OUR WORK ===================== -->
+    <section class="work" id="work">
+      <div class="container work__head">
+        <p class="label reveal-up">Portfolio</p>
+        <h2 class="heading reveal-up" data-delay="100">
+          Transformations We're<br/><em>Proud Of</em>
+        </h2>
+      </div>
+
+      <div class="work__mosaic">
+        <div class="mosaic__item mosaic__item--tall reveal-scale" data-delay="0" id="gal-1" data-caption="Hair Styling">
+          <img src="hair-service.png" alt="Hair styling" loading="lazy" />
+          <div class="mosaic__overlay"><span>Hair Styling</span></div>
+        </div>
+        <div class="mosaic__item reveal-scale" data-delay="100" id="gal-2" data-caption="Precision Haircut">
+          <img src="haircut.png" alt="Haircut" loading="lazy" />
+          <div class="mosaic__overlay"><span>Precision Haircut</span></div>
+        </div>
+        <div class="mosaic__item mosaic__item--wide reveal-scale" data-delay="150" id="gal-3" data-caption="Hair Color Treatment">
+          <img src="color-treatment.png" alt="Hair color" loading="lazy" />
+          <div class="mosaic__overlay"><span>Color Treatment</span></div>
+        </div>
+        <div class="mosaic__item mosaic__item--tall reveal-scale" data-delay="200" id="gal-4" data-caption="Bridal Glam">
+          <img src="bridal-makeup.png" alt="Bridal makeup" loading="lazy" />
+          <div class="mosaic__overlay"><span>Bridal Glam</span></div>
+        </div>
+        <div class="mosaic__item reveal-scale" data-delay="250" id="gal-5" data-caption="Spa & Facial">
+          <img src="facial-spa.png" alt="Facial spa" loading="lazy" />
+          <div class="mosaic__overlay"><span>Spa &amp; Facial</span></div>
+        </div>
+        <div class="mosaic__item reveal-scale" data-delay="300" id="gal-6" data-caption="Men's Grooming">
+          <img src="mens-grooming.png" alt="Men's grooming" loading="lazy" />
+          <div class="mosaic__overlay"><span>Men's Grooming</span></div>
+        </div>
+        <div class="mosaic__item mosaic__item--wide reveal-scale" data-delay="350" id="gal-7" data-caption="Our Salon Space">
+          <img src="salon-interior.png" alt="Salon interior" loading="lazy" />
+          <div class="mosaic__overlay"><span>Our Space</span></div>
+        </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image">
+        <button class="lightbox__close" id="lbClose" aria-label="Close">✕</button>
+        <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous">‹</button>
+        <div class="lightbox__img-wrap">
+          <img src="" alt="" id="lbImg" />
+        </div>
+        <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next">›</button>
+        <p class="lightbox__caption" id="lbCaption"></p>
+      </div>
+      <div class="lightbox__backdrop" id="lbBackdrop"></div>
+    </section>
+
+    <!-- ===================== REVIEWS ===================== -->
+    <section class="reviews" id="reviews">
+      <div class="reviews__bg-text" aria-hidden="true">LOVE</div>
+      <div class="container">
+        <p class="label reveal-up">Client Love</p>
+        <h2 class="heading reveal-up" data-delay="100">What Our Guests <em>Say</em></h2>
+
+        <div class="reviews__score reveal-fade" data-delay="200">
+          <div class="reviews__big-num">5.0</div>
+          <div class="reviews__score-right">
+            <div class="reviews__stars">★★★★★</div>
+            <div class="reviews__count">37 Google Reviews</div>
+            <a href="https://share.google/LGYq2Kq760mKNZ76T" target="_blank" rel="noopener" class="reviews__glink" id="reviewsGoogleLink">View on Google →</a>
+          </div>
+        </div>
+
+        <div class="reviews__slider" id="reviewsSlider">
+          <div class="reviews__track" id="reviewsTrack">
+
+            <div class="rcard" id="rcard1">
+              <div class="rcard__top">
+                <div class="rcard__avatar" style="--c:#b8860b">A</div>
+                <div>
+                  <div class="rcard__name">Anjali Das</div>
+                  <div class="rcard__stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="rcard__text">"Absolutely love this place! Got my hair colored and the result was stunning. The staff is super friendly and the salon has such a beautiful vibe. Definitely coming back!"</p>
+              <span class="rcard__service">Hair Coloring</span>
+            </div>
+
+            <div class="rcard" id="rcard2">
+              <div class="rcard__top">
+                <div class="rcard__avatar" style="--c:#2d6a4f">R</div>
+                <div>
+                  <div class="rcard__name">Rahul Bora</div>
+                  <div class="rcard__stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="rcard__text">"Best haircut I've ever had in Guwahati! The stylist really understood what I wanted. Clean, modern salon with a great atmosphere. Highly recommend to everyone!"</p>
+              <span class="rcard__service">Haircut &amp; Styling</span>
+            </div>
+
+            <div class="rcard" id="rcard3">
+              <div class="rcard__top">
+                <div class="rcard__avatar" style="--c:#6b2d6b">P</div>
+                <div>
+                  <div class="rcard__name">Priya Sharma</div>
+                  <div class="rcard__stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="rcard__text">"Had my bridal makeup done here — I was blown away! The artist was so professional and made me look absolutely gorgeous. The best decision for my wedding day."</p>
+              <span class="rcard__service">Bridal Makeup</span>
+            </div>
+
+            <div class="rcard" id="rcard4">
+              <div class="rcard__top">
+                <div class="rcard__avatar" style="--c:#1a5f7a">S</div>
+                <div>
+                  <div class="rcard__name">Srishti Gogoi</div>
+                  <div class="rcard__stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="rcard__text">"Such a welcoming and inclusive space! Got a facial here and my skin has been glowing ever since. The products they use are top quality. Love this place so much!"</p>
+              <span class="rcard__service">Facial Treatment</span>
+            </div>
+
+            <div class="rcard" id="rcard5">
+              <div class="rcard__top">
+                <div class="rcard__avatar" style="--c:#7a4f1a">M</div>
+                <div>
+                  <div class="rcard__name">Manish Kalita</div>
+                  <div class="rcard__stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="rcard__text">"Been going here for 6 months — consistent quality every single time. The team is talented and makes you feel special. My absolute go-to salon in Guwahati!"</p>
+              <span class="rcard__service">Regular Client</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="reviews__controls reveal-fade" data-delay="300">
+          <button class="reviews__btn" id="rPrev" aria-label="Previous review">←</button>
+          <div class="reviews__dots" id="rDots"></div>
+          <button class="reviews__btn" id="rNext" aria-label="Next review">→</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== CTA STRIP ===================== -->
+    <section class="cta-strip">
+      <div class="cta-strip__left reveal-up">
+        <p class="label">Ready for a Transformation?</p>
+        <h2>Visit us today &amp; leave<br /><em>looking your best.</em></h2>
+      </div>
+      <div class="cta-strip__right reveal-fade" data-delay="150">
+        <img src="hero.png" alt="LS Blonde Salon" loading="lazy" />
+        <a href="#find-us" class="cta-strip__btn" id="ctaStripBtn">Book a Visit</a>
+      </div>
+    </section>
+
+    <!-- ===================== FIND US ===================== -->
+    <section class="findus" id="find-us">
+      <div class="container findus__grid">
+
+        <div class="findus__info">
+          <p class="label reveal-up">Find Us</p>
+          <h2 class="heading reveal-up" data-delay="100">Visit <em>LS Blonde</em></h2>
+
+          <div class="findus__cards">
+            <div class="findus__card reveal-up" data-delay="100" id="findusPinCard">
+              <div class="findus__icon">📍</div>
+              <div>
+                <h4>Address</h4>
+                <p>Guwahati Shillong Rd, opp. Dairy Gate,<br />Jaya Nagar, Six Mile,<br />Guwahati, Assam 781022</p>
+              </div>
+            </div>
+            <div class="findus__card reveal-up" data-delay="200" id="findusHoursCard">
+              <div class="findus__icon">🕐</div>
+              <div>
+                <h4>Hours</h4>
+                <p>Tue – Sun: 10:00 AM – 8:00 PM<br /><span class="closed">Monday: Closed</span></p>
+              </div>
+            </div>
+            <div class="findus__card reveal-up" data-delay="300" id="findusContactCard">
+              <div class="findus__icon">📞</div>
+              <div>
+                <h4>Contact</h4>
+                <p>Walk-ins always welcome!<br />Call or visit us anytime during hours.</p>
+                <a href="https://share.google/LGYq2Kq760mKNZ76T" target="_blank" rel="noopener" class="findus__link" id="findusGmapsLink">Open in Google Maps →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="findus__socials reveal-up" data-delay="400">
+            <a href="#" class="findus__social" id="findusIG" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="findus__social" id="findusFB" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="findus__map reveal-scale" data-delay="200" id="findusMap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.4!2d91.8498!3d26.1453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a5b6da4c0db73%3A0x1b9ee29c78d48ae4!2sLS%20Blonde%20Unisex%20Salon!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            width="100%" height="100%" style="border:0" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="LS Blonde Salon Location on Google Maps">
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <span class="header__logo-ls">LS</span><span class="header__logo-blonde">Blonde</span>
+        </div>
+        <p>Your premier unisex beauty destination<br/>in the heart of Guwahati, Assam.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#find-us">Find Us</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Services</h5>
+        <ul>
+          <li>Hair Cutting &amp; Styling</li>
+          <li>Hair Coloring</li>
+          <li>Bridal Packages</li>
+          <li>Spa &amp; Facial</li>
+          <li>Nail Art</li>
+          <li>Men's Grooming</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>© 2025 LS Blonde Unisex Salon, Guwahati. All rights reserved.</p>
+      <p class="footer__rating">⭐ 5.0 Rated on Google</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
