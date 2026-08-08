@@ -151,8 +151,36 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
   transition:transform .4s var(--ease-out);
 }
 .btn:hover::after { transform:scaleX(1); }
+
+/* Shine effect on gold buttons */
 .btn--gold {
+  position: relative;
+  overflow: hidden;
   background:var(--gold); color:var(--black);
+}
+.btn--gold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+}
+.btn--gold:hover::before {
+  animation: shine 0.85s ease-out;
+}
+@keyframes shine {
+  100% {
+    left: 150%;
+  }
 }
 .btn--gold:hover {
   background:var(--gold-lt);
