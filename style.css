@@ -1028,6 +1028,65 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
 }
 
 /* ======================================================
+   BACK TO TOP
+   ====================================================== */
+.back-to-top {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--dark3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s, transform 0.4s var(--ease-out), border-color 0.3s;
+  transform: translateY(15px);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  transform: translateY(-4px);
+}
+
+.back-to-top__progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.back-to-top__circle {
+  transition: stroke-dashoffset 0.1s;
+}
+
+.back-to-top__arrow {
+  font-size: 1.2rem;
+  color: var(--white);
+  transition: color 0.3s, transform 0.3s;
+}
+
+.back-to-top:hover .back-to-top__arrow {
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* ======================================================
    RESPONSIVE
    ====================================================== */
 @media (max-width: 1024px) {

@@ -460,3 +460,43 @@ qsa('.scard:not(.scard--list)').forEach(card => {
     });
   });
 })();
+
+/* =====================================================
+   15. BACK TO TOP BUTTON WITH PROGRESS RING
+   ===================================================== */
+(function backToTopBtn() {
+  const btn = qs('#backToTop');
+  const progressCircle = qs('#backToTopProgress');
+  if (!btn || !progressCircle) return;
+
+  const totalLength = 125.6; // 2 * Math.PI * r (r=20)
+
+  function update() {
+    const scrollY = window.scrollY;
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    if (scrollY > 300) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+
+    if (totalHeight > 0) {
+      const progress = scrollY / totalHeight;
+      const offset = totalLength - (progress * totalLength);
+      progressCircle.style.strokeDashoffset = offset;
+    }
+  }
+
+  on(window, 'scroll', update, { passive: true });
+  
+  on(btn, 'click', () => {
+    if (typeof lenis !== 'undefined') {
+      lenis.scrollTo(0);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+
+  update();
+})();
