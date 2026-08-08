@@ -7,7 +7,7 @@
   <meta name="description" content="LS Blonde Unisex Salon — Guwahati's top-rated unisex beauty salon at Six Mile. Expert haircuts, coloring, bridal makeup, spa & more. 5.0 ⭐ on Google." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=DM+Sans:wght@200;300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="loading">
@@ -65,52 +65,56 @@
   <main>
 
     <!-- ===================== HERO ===================== -->
-    <section class="hero" id="home">
-      <div class="hero__media">
-        <img src="hero.png" alt="LS Blonde Salon interior" class="hero__img" id="heroImg" />
-        <div class="hero__vignette"></div>
-      </div>
+    <div class="hero-wrapper" id="home">
+      <section class="hero">
+        <div class="hero__media-container">
+          <div class="hero__media">
+            <img src="hero.png" alt="LS Blonde Salon interior" class="hero__img" id="heroImg" />
+            <div class="hero__vignette"></div>
+          </div>
+        </div>
 
-      <div class="hero__content">
-        <div class="hero__tag reveal-fade" data-delay="800">
-          <span class="dot-pulse"></span> Open Tue – Sun · 10 AM onwards
+        <div class="hero__content">
+          <div class="hero__tag">
+            <span class="dot-pulse"></span> Open Tue – Sun · 10 AM onwards
+          </div>
+          <h1 class="hero__title">
+            <span class="hero__line">Where Every</span>
+            <span class="hero__line hero__line--gold">Look Tells</span>
+            <span class="hero__line">Your Story.</span>
+          </h1>
+          <p class="hero__sub">
+            Guwahati's premium unisex salon — crafting confidence through artistry.
+          </p>
+          <div class="hero__actions">
+            <a href="#services" class="btn btn--gold" id="heroExploreBtn">Explore Services</a>
+            <a href="#work"     class="btn btn--ghost" id="heroWorkBtn">See Our Work</a>
+          </div>
         </div>
-        <h1 class="hero__title">
-          <span class="hero__line reveal-up" data-delay="1000">Where Every</span>
-          <span class="hero__line hero__line--gold reveal-up" data-delay="1150">Look Tells</span>
-          <span class="hero__line reveal-up" data-delay="1300">Your Story.</span>
-        </h1>
-        <p class="hero__sub reveal-fade" data-delay="1500">
-          Guwahati's premium unisex salon — crafting confidence through artistry.
-        </p>
-        <div class="hero__actions reveal-fade" data-delay="1700">
-          <a href="#services" class="btn btn--gold" id="heroExploreBtn">Explore Services</a>
-          <a href="#work"     class="btn btn--ghost" id="heroWorkBtn">See Our Work</a>
-        </div>
-      </div>
 
-      <div class="hero__metrics reveal-fade" data-delay="2000">
-        <div class="hero__metric">
-          <strong class="count" data-target="5.0" data-decimal>5.0</strong>
-          <span>Google Rating</span>
+        <div class="hero__metrics">
+          <div class="hero__metric">
+            <strong class="count" data-target="5.0" data-decimal>5.0</strong>
+            <span>Google Rating</span>
+          </div>
+          <div class="hero__divider"></div>
+          <div class="hero__metric">
+            <strong class="count" data-target="37">37</strong><strong>+</strong>
+            <span>Reviews</span>
+          </div>
+          <div class="hero__divider"></div>
+          <div class="hero__metric">
+            <strong>LGBTQ+</strong>
+            <span>Friendly Space</span>
+          </div>
         </div>
-        <div class="hero__divider"></div>
-        <div class="hero__metric">
-          <strong class="count" data-target="37">37</strong><strong>+</strong>
-          <span>Reviews</span>
-        </div>
-        <div class="hero__divider"></div>
-        <div class="hero__metric">
-          <strong>LGBTQ+</strong>
-          <span>Friendly Space</span>
-        </div>
-      </div>
 
-      <div class="hero__scroll-hint" id="scrollHint">
-        <div class="hero__scroll-line"></div>
-        <span>Scroll</span>
-      </div>
-    </section>
+        <div class="hero__scroll-hint" id="scrollHint">
+          <div class="hero__scroll-line"></div>
+          <span>Scroll</span>
+        </div>
+      </section>
+    </div>
 
     <!-- ===================== TICKER ===================== -->
     <div class="ticker" aria-hidden="true">
@@ -272,41 +276,42 @@
 
     <!-- ===================== GALLERY / OUR WORK ===================== -->
     <section class="work" id="work">
-      <div class="container work__head">
-        <p class="label reveal-up">Portfolio</p>
-        <h2 class="heading reveal-up" data-delay="100">
-          Transformations We're<br/><em>Proud Of</em>
-        </h2>
-      </div>
-
-      <div class="work__mosaic">
-        <div class="mosaic__item mosaic__item--tall reveal-scale" data-delay="0" id="gal-1" data-caption="Hair Styling">
-          <img src="hair-service.png" alt="Hair styling" loading="lazy" />
-          <div class="mosaic__overlay"><span>Hair Styling</span></div>
+      <div class="work__pinned">
+        <div class="container work__head">
+          <p class="label">Portfolio</p>
+          <h2 class="heading">Transformations We're <em>Proud Of</em></h2>
         </div>
-        <div class="mosaic__item reveal-scale" data-delay="100" id="gal-2" data-caption="Precision Haircut">
-          <img src="haircut.png" alt="Haircut" loading="lazy" />
-          <div class="mosaic__overlay"><span>Precision Haircut</span></div>
-        </div>
-        <div class="mosaic__item mosaic__item--wide reveal-scale" data-delay="150" id="gal-3" data-caption="Hair Color Treatment">
-          <img src="color-treatment.png" alt="Hair color" loading="lazy" />
-          <div class="mosaic__overlay"><span>Color Treatment</span></div>
-        </div>
-        <div class="mosaic__item mosaic__item--tall reveal-scale" data-delay="200" id="gal-4" data-caption="Bridal Glam">
-          <img src="bridal-makeup.png" alt="Bridal makeup" loading="lazy" />
-          <div class="mosaic__overlay"><span>Bridal Glam</span></div>
-        </div>
-        <div class="mosaic__item reveal-scale" data-delay="250" id="gal-5" data-caption="Spa & Facial">
-          <img src="facial-spa.png" alt="Facial spa" loading="lazy" />
-          <div class="mosaic__overlay"><span>Spa &amp; Facial</span></div>
-        </div>
-        <div class="mosaic__item reveal-scale" data-delay="300" id="gal-6" data-caption="Men's Grooming">
-          <img src="mens-grooming.png" alt="Men's grooming" loading="lazy" />
-          <div class="mosaic__overlay"><span>Men's Grooming</span></div>
-        </div>
-        <div class="mosaic__item mosaic__item--wide reveal-scale" data-delay="350" id="gal-7" data-caption="Our Salon Space">
-          <img src="salon-interior.png" alt="Salon interior" loading="lazy" />
-          <div class="mosaic__overlay"><span>Our Space</span></div>
+        <div class="work__horizontal-wrap">
+          <div class="work__track">
+            <div class="mosaic__item work__item" id="gal-1" data-caption="Hair Styling">
+              <img src="hair-service.png" alt="Hair styling" loading="lazy" />
+              <div class="mosaic__overlay"><span>Hair Styling</span></div>
+            </div>
+            <div class="mosaic__item work__item" id="gal-2" data-caption="Precision Haircut">
+              <img src="haircut.png" alt="Haircut" loading="lazy" />
+              <div class="mosaic__overlay"><span>Precision Haircut</span></div>
+            </div>
+            <div class="mosaic__item work__item" id="gal-3" data-caption="Hair Color Treatment">
+              <img src="color-treatment.png" alt="Hair color" loading="lazy" />
+              <div class="mosaic__overlay"><span>Color Treatment</span></div>
+            </div>
+            <div class="mosaic__item work__item" id="gal-4" data-caption="Bridal Glam">
+              <img src="bridal-makeup.png" alt="Bridal makeup" loading="lazy" />
+              <div class="mosaic__overlay"><span>Bridal Glam</span></div>
+            </div>
+            <div class="mosaic__item work__item" id="gal-5" data-caption="Spa & Facial">
+              <img src="facial-spa.png" alt="Facial spa" loading="lazy" />
+              <div class="mosaic__overlay"><span>Spa &amp; Facial</span></div>
+            </div>
+            <div class="mosaic__item work__item" id="gal-6" data-caption="Men's Grooming">
+              <img src="mens-grooming.png" alt="Men's grooming" loading="lazy" />
+              <div class="mosaic__overlay"><span>Men's Grooming</span></div>
+            </div>
+            <div class="mosaic__item work__item" id="gal-7" data-caption="Our Salon Space">
+              <img src="salon-interior.png" alt="Our Space" loading="lazy" />
+              <div class="mosaic__overlay"><span>Our Space</span></div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -519,6 +524,10 @@
     </div>
   </footer>
 
+  <!-- GSAP, ScrollTrigger, and Lenis -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

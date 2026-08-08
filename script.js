@@ -4,6 +4,25 @@
 
 'use strict';
 
+// Register GSAP ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// Initialize Lenis Smooth Scroll
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smoothWheel: true,
+  touchMultiplier: 1.5
+});
+
+lenis.on('scroll', ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+
 /* ---- Utilities ---- */
 const qs  = (sel, ctx = document) => ctx.querySelector(sel);
 const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
@@ -124,39 +143,95 @@ const on  = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
 })();
 
 /* =====================================================
-   6. INTERSECTION-OBSERVER REVEALS
+   6. GSAP SCROLLTRIGGER ANIMATIONS
    ===================================================== */
-(function reveals() {
-  const els = qsa('[data-delay]');
-  // Apply transition-delay from data-delay attr
-  els.forEach(el => {
-    const delay = parseInt(el.dataset.delay || 0, 10);
-    el.style.transitionDelay = delay + 'ms';
+
+// A. Hero Zoom/Scale Down into Card Frame
+(function heroScroll() {
+  const wrapper = qs('.hero-wrapper');
+  const mediaContainer = qs('.hero__media-container');
+  const img = qs('#heroImg');
+  if (!wrapper || !mediaContainer) return;
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: wrapper,
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true
+    }
   });
 
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  tl.to(mediaContainer, {
+    scale: 0.9,
+    borderRadius: '24px',
+    ease: 'none'
+  }, 0);
 
-  qsa('.reveal-up, .reveal-fade, .reveal-scale').forEach(el => io.observe(el));
+  tl.to(img, {
+    scale: 1,
+    ease: 'none'
+  }, 0);
+
+  tl.to('.hero__content, .hero__metrics, .hero__scroll-hint', {
+    opacity: 0,
+    y: -40,
+    ease: 'none'
+  }, 0);
 })();
 
-/* =====================================================
-   7. HERO PARALLAX (subtle image shift on scroll)
-   ===================================================== */
-(function heroParallax() {
-  const img = qs('#heroImg');
-  if (!img) return;
-  on(window, 'scroll', () => {
-    if (window.scrollY > window.innerHeight) return;
-    const offset = window.scrollY * 0.3;
-    img.style.transform = `scale(1) translateY(${offset}px)`;
-  }, { passive: true });
+// B. Horizontal Gallery Scroll
+(function galleryScroll() {
+  const workSection = qs('.work');
+  const workTrack = qs('.work__track');
+  const pinned = qs('.work__pinned');
+  const wrap = qs('.work__horizontal-wrap');
+  if (!workSection || !workTrack || !pinned || !wrap) return;
+
+  const getScrollAmount = () => {
+    return workTrack.scrollWidth - window.innerWidth + 80; // track width minus viewport width + margin padding
+  };
+
+  gsap.to(workTrack, {
+    x: () => -getScrollAmount(),
+    ease: 'none',
+    scrollTrigger: {
+      trigger: workSection,
+      start: 'top top',
+      end: () => `+=${getScrollAmount()}`,
+      pin: pinned,
+      scrub: 1,
+      invalidateOnRefresh: true
+    }
+  });
+})();
+
+// C. Staggered Reveals
+(function gsapReveals() {
+  gsap.utils.toArray('.reveal-up, .reveal-fade, .reveal-scale').forEach(el => {
+    let animProps = { opacity: 0 };
+    const delay = parseFloat(el.dataset.delay || 0) / 1000;
+
+    if (el.classList.contains('reveal-up')) {
+      animProps.y = 40;
+    } else if (el.classList.contains('reveal-fade')) {
+      animProps.y = 15;
+    } else if (el.classList.contains('reveal-scale')) {
+      animProps.scale = 0.94;
+    }
+
+    gsap.from(el, {
+      ...animProps,
+      duration: 0.8,
+      delay: delay,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 85%',
+        toggleActions: 'play none none none'
+      }
+    });
+  });
 })();
 
 /* =====================================================
