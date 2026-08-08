@@ -432,3 +432,31 @@ qsa('.scard:not(.scard--list)').forEach(card => {
   const hide = () => { hint.style.opacity = '0'; hint.style.pointerEvents = 'none'; };
   on(window, 'scroll', hide, { passive: true, once: true });
 })();
+
+/* =====================================================
+   14. FAQ ACCORDION LOGIC
+   ===================================================== */
+(function faqAccordion() {
+  const items = qsa('.faq__item');
+  items.forEach(item => {
+    const question = qs('.faq__question', item);
+    const answer = qs('.faq__answer', item);
+    
+    on(question, 'click', () => {
+      const active = item.classList.contains('active');
+      
+      // Close all items
+      items.forEach(otherItem => {
+        otherItem.classList.remove('active');
+        qs('.faq__question', otherItem).setAttribute('aria-expanded', 'false');
+        qs('.faq__answer', otherItem).style.maxHeight = null;
+      });
+      
+      if (!active) {
+        item.classList.add('active');
+        question.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+})();

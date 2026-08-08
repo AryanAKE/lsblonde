@@ -921,6 +921,113 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
 .footer__rating { color:var(--gold); }
 
 /* ======================================================
+   FAQ ACCORDION
+   ====================================================== */
+.faq {
+  padding: 9rem 0;
+  background: var(--dark3);
+}
+
+.faq__inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq__list {
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq__item {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.faq__item:hover {
+  border-color: rgba(212, 175, 55, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.faq__question {
+  width: 100%;
+  padding: 1.8rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: left;
+  font-family: var(--ff-sans);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--white);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.faq__icon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+}
+
+.faq__icon::before,
+.faq__icon::after {
+  content: '';
+  position: absolute;
+  background: var(--gold);
+  transition: transform 0.4s ease;
+}
+
+/* Horizontal line */
+.faq__icon::before {
+  top: 6px;
+  left: 0;
+  width: 14px;
+  height: 2px;
+}
+
+/* Vertical line */
+.faq__icon::after {
+  top: 0;
+  left: 6px;
+  width: 2px;
+  height: 14px;
+}
+
+.faq__item.active {
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.faq__item.active .faq__icon {
+  transform: rotate(45deg);
+}
+
+.faq__item.active .faq__icon::after {
+  transform: scaleY(0);
+}
+
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.faq__answer p {
+  padding: 0 2rem 1.8rem 2rem;
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* ======================================================
    RESPONSIVE
    ====================================================== */
 @media (max-width: 1024px) {
