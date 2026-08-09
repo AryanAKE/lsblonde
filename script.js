@@ -500,3 +500,14 @@ qsa('.scard:not(.scard--list)').forEach(card => {
 
   update();
 })();
+
+/* =====================================================
+   16. DYNAMIC COPYRIGHT YEAR AUTO-UPDATER
+   ===================================================== */
+(function autoCopyrightYear() {
+  const yearEl = qs('#currentYear');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+})();
+
