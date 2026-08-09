@@ -78,6 +78,12 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
 .cursor.is-hover { width:64px; height:64px; border-color:var(--gold); }
 .cursor.is-click { width:28px; height:28px; }
 
+@media (hover: none) and (pointer: coarse) {
+  body, button, a { cursor: auto !important; }
+  .cursor, .cursor-dot { display: none !important; }
+}
+
+
 /* ---- SCROLL PROGRESS ---- */
 .scroll-progress {
   position:fixed; top:0; left:0; height:2px;
