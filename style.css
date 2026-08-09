@@ -576,7 +576,7 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
   cursor: none;
 }
 .scard:not(.scard--list):hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.02);
   border-color: rgba(212, 175, 55, 0.3);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212, 175, 55, 0.05);
 }
@@ -803,7 +803,11 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
   padding:2rem;
   transition:border-color .4s, transform .4s var(--ease-out), box-shadow .4s ease;
 }
-.rcard:hover { border-color: rgba(212, 175, 55, 0.3); transform:translateY(-6px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); }
+.rcard:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
 .rcard__top { display:flex; align-items:center; gap:1rem; margin-bottom:1.2rem; }
 .rcard__avatar {
   width:46px; height:46px; border-radius:50%;
