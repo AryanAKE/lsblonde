@@ -930,13 +930,18 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
 .findus__social {
   width:44px; height:44px;
   border:1px solid rgba(200,168,75,.3);
+  border-radius:50%;
   color:var(--gold); display:flex; align-items:center; justify-content:center;
-  transition:all .3s;
+  transition:all .4s var(--ease-out);
 }
-.findus__social svg { width:18px; height:18px; fill:currentColor; }
+.findus__social svg { width:18px; height:18px; fill:currentColor; transition: transform .4s var(--ease-out); }
 .findus__social:hover {
   background:var(--gold); color:var(--black);
-  border-color:var(--gold); transform:translateY(-3px);
+  border-color:var(--gold); transform:translateY(-4px);
+  box-shadow: 0 8px 20px rgba(212,175,55,.3);
+}
+.findus__social:hover svg {
+  transform: scale(1.15);
 }
 
 .findus__map {
