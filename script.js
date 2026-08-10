@@ -105,7 +105,7 @@ const on  = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
 (function header() {
   const headerEl = qs('#header');
   const links    = qsa('.header__link');
-  const sections = qsa('section[id]');
+  const sections = qsa('section[id], .hero-wrapper');
 
   function update() {
     headerEl.classList.toggle('scrolled', window.scrollY > 60);
@@ -113,8 +113,13 @@ const on  = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
     // active link
     let current = '';
     sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+      const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      if (window.scrollY >= top - 150 && window.scrollY < top + height - 150) {
+        current = sec.getAttribute('id');
+      }
     });
+    
     links.forEach(a => {
       const href = a.getAttribute('href').replace('#', '');
       a.classList.toggle('active', href === current);
