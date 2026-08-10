@@ -279,8 +279,8 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
   background:var(--text);
   transition:transform .35s var(--ease-out), opacity .3s;
 }
-.header__burger.open span:nth-child(1){ transform:translateY(7.5px) rotate(45deg); }
-.header__burger.open span:nth-child(2){ opacity:0; transform:scaleX(0); }
+.header__burger.open span:nth-child(1){ transform:translateY(4px) rotate(45deg); }
+.header__burger.open span:nth-child(2){ transform:translateY(-4px) rotate(-45deg); }
 
 /* ---- Mobile Menu ---- */
 .mobile-menu {
