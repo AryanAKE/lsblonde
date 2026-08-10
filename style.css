@@ -434,6 +434,12 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
   align-items: center;
   gap: 2rem;
 }
+.hero__metric {
+  transition: transform .4s var(--ease-out);
+}
+.hero__metric:hover {
+  transform: translateY(-4px) scale(1.05);
+}
 .hero__metric strong {
   display: block;
   font-family: var(--ff-display);
@@ -441,6 +447,11 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
   font-weight: 600;
   color: var(--gold);
   line-height: 1;
+  transition: text-shadow .4s var(--ease-out), color .4s var(--ease-out);
+}
+.hero__metric:hover strong {
+  color: var(--gold-lt);
+  text-shadow: 0 0 12px rgba(212,175,55,0.5);
 }
 .hero__metric span {
   font-size: .7rem;
