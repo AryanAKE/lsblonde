@@ -968,10 +968,11 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
   color:var(--gold); margin-bottom:1.4rem;
 }
 .footer__col ul { display:flex; flex-direction:column; gap:.7rem; }
-.footer__col ul li, .footer__col ul li a {
-  font-size:.87rem; color:var(--muted); transition:color .3s;
+.footer__col ul li a {
+  display: inline-block;
+  font-size:.87rem; color:var(--muted); transition:color .3s, transform .3s var(--ease-out);
 }
-.footer__col ul li a:hover { color:var(--gold-lt); }
+.footer__col ul li a:hover { color:var(--gold-lt); transform: translateX(4px); }
 
 .footer__bottom {
   display:flex; justify-content:space-between; align-items:center;
