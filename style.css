@@ -39,6 +39,12 @@ ul { list-style:none; }
 img { display:block; width:100%; height:100%; object-fit:cover; }
 button { cursor:none; border:none; background:none; font-family:inherit; }
 
+/* ---- SELECTION ---- */
+::selection {
+  background: var(--gold);
+  color: var(--black);
+}
+
 /* ---- SCROLLBAR ---- */
 ::-webkit-scrollbar {
   width: 8px;
