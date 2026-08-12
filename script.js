@@ -34,6 +34,7 @@ const on  = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
 (function loader() {
   const loaderEl  = qs('#loader');
   const barEl     = qs('#loaderBar');
+  const pctEl     = qs('#loaderPercentage');
   let pct = 0;
 
   const tick = setInterval(() => {
@@ -44,11 +45,12 @@ const on  = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
       setTimeout(() => {
         loaderEl.classList.add('out');
         document.body.classList.remove('loading');
-        // kick off hero image parallax
         qs('#heroImg').classList.add('loaded');
       }, 500);
     }
-    barEl.style.width = pct + '%';
+    const displayPct = Math.floor(pct);
+    barEl.style.width = displayPct + '%';
+    if (pctEl) pctEl.textContent = displayPct + '%';
   }, 100);
 })();
 

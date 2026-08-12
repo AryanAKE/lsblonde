@@ -145,16 +145,36 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
 .loader__bar {
   width:200px; height:1px;
   background:var(--dark3); overflow:hidden;
+  box-shadow: 0 0 10px rgba(212,175,55,0.2);
 }
 .loader__bar span {
   display:block; height:100%;
   background:linear-gradient(90deg, var(--gold-dk), var(--gold-lt));
   width:0%; transition:width .08s linear;
 }
+.loader__percentage {
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--gold-lt);
+  letter-spacing: 1px;
+  margin-top: -0.5rem;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
 .loader__sub {
   font-size:.75rem; letter-spacing:.25em;
   text-transform:uppercase; color:var(--muted);
 }
+.loader::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
 
 /* ---- LAYOUT UTILITIES ---- */
 .container { max-width:1180px; margin:0 auto; padding:0 2rem; }
