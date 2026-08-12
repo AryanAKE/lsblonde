@@ -1238,3 +1238,121 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
   .footer__brand { grid-column:auto; }
   .footer__bottom { flex-direction:column; gap:.5rem; text-align:center; padding:1.5rem; }
 }
+
+/* ======================================================
+   BOOKING MODAL STYLES
+   ====================================================== */
+.booking-modal__backdrop {
+  position: fixed; inset: 0; z-index: 1300;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0; visibility: hidden;
+  transition: opacity .4s var(--ease-out), visibility .4s var(--ease-out);
+}
+.booking-modal__backdrop.open { opacity: 1; visibility: visible; }
+
+.booking-modal {
+  position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%, -45%);
+  z-index: 1400; width: 90%; max-width: 580px;
+  opacity: 0; visibility: hidden;
+  transition: transform .5s var(--ease-out), opacity .5s var(--ease-out), visibility .5s var(--ease-out);
+}
+.booking-modal.open {
+  transform: translate(-50%, -50%);
+  opacity: 1; visibility: visible;
+}
+
+.booking-modal__card {
+  background: rgba(8, 8, 8, 0.95);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8), 0 0 50px rgba(212, 175, 55, 0.05);
+  border-radius: 20px;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.booking-modal__close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--white); font-size: 0.9rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .3s; cursor: pointer;
+  background: transparent;
+}
+.booking-modal__close:hover {
+  background: var(--gold); border-color: var(--gold); color: var(--black);
+}
+
+.booking-modal__title {
+  font-family: var(--ff-display); font-size: 2.2rem;
+  font-weight: 400; color: var(--white); margin-bottom: 0.5rem;
+}
+.booking-modal__title em { font-style: italic; color: var(--gold); }
+.booking-modal__desc { font-size: 0.88rem; color: var(--muted); margin-bottom: 2rem; }
+
+.booking-modal__form {
+  display: flex; flex-direction: column; gap: 1.2rem;
+}
+
+.form-group {
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.form-group label {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--gold-lt);
+}
+.form-group input, .form-group select {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px; color: var(--white);
+  padding: 0.8rem 1rem; font-family: var(--ff-sans); font-size: 0.9rem;
+  transition: all 0.3s var(--ease-out);
+  outline: none;
+}
+.form-group input:focus, .form-group select:focus {
+  border-color: var(--gold); background: rgba(212, 175, 55, 0.04);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+}
+.form-group select option {
+  background: var(--dark2); color: var(--white);
+}
+
+.form-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
+}
+.btn--full { width: 100%; justify-content: center; border-radius: 8px; font-weight: 600; margin-top: 0.5rem; }
+
+/* Booking Success Screen */
+.booking-modal__success {
+  display: none; flex-direction: column; align-items: center; text-align: center;
+  padding: 1rem 0;
+}
+.booking-modal__success h3 {
+  font-family: var(--ff-display); font-size: 2.2rem; font-weight: 400;
+  color: var(--white); margin: 1.5rem 0 0.8rem;
+}
+.booking-modal__success h3 em { font-style: italic; color: var(--gold); }
+.booking-modal__success p { font-size: 0.95rem; color: var(--muted); max-width: 400px; margin-bottom: 2rem; line-height: 1.6; }
+
+/* GSAP checkmark animation SVG helper styles */
+.success-icon {
+  width: 80px; height: 80px;
+}
+.success-circle {
+  stroke: var(--gold); stroke-width: 2; stroke-dasharray: 157; stroke-dashoffset: 157;
+  transform-origin: center; transform: rotate(-90deg);
+}
+.success-check {
+  stroke: var(--gold); stroke-width: 3; stroke-dasharray: 48; stroke-dashoffset: 48;
+}
+
+@media (max-width: 580px) {
+  .booking-modal__card { padding: 2rem; }
+  .form-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+  .booking-modal__title { font-size: 1.8rem; }
+}
+

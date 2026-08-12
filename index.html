@@ -624,6 +624,77 @@
     <span class="back-to-top__arrow">↑</span>
   </button>
 
+  <!-- BOOKING MODAL -->
+  <div class="booking-modal" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="booking-modal__card">
+      <button class="booking-modal__close" id="bookingClose" aria-label="Close booking modal">✕</button>
+      <div class="booking-modal__body" id="bookingModalBody">
+        <h3 id="modalTitle" class="booking-modal__title">Book an <em>Appointment</em></h3>
+        <p class="booking-modal__desc">Select your preferred services and schedule your visit below.</p>
+        
+        <form class="booking-modal__form" id="bookingForm">
+          <div class="form-group">
+            <label for="bookingName">Your Name</label>
+            <input type="text" id="bookingName" required placeholder="Enter your full name" />
+          </div>
+          
+          <div class="form-group">
+            <label for="bookingPhone">Phone Number</label>
+            <input type="tel" id="bookingPhone" required placeholder="Enter your 10-digit number" pattern="[0-9]{10}" />
+          </div>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="bookingService">Select Service</label>
+              <select id="bookingService" required>
+                <option value="" disabled selected>Choose a service</option>
+                <option value="Hair Styling & Blow-Dry">Hair Styling &amp; Blow-Dry</option>
+                <option value="Hair Coloring & Highlights">Hair Coloring &amp; Highlights</option>
+                <option value="Precision Haircut">Precision Haircut</option>
+                <option value="Facials & Spa Therapy">Facials &amp; Spa Therapy</option>
+                <option value="Bridal Makeup & Packages">Bridal Makeup &amp; Packages</option>
+                <option value="Other Salon Service">Other Salon Service</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="bookingDate">Preferred Date</label>
+              <input type="date" id="bookingDate" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="bookingTime">Preferred Time Slot</label>
+            <select id="bookingTime" required>
+              <option value="" disabled selected>Select a time slot</option>
+              <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM</option>
+              <option value="12:00 PM - 02:00 PM">12:00 PM - 02:00 PM</option>
+              <option value="02:00 PM - 04:00 PM">02:00 PM - 04:00 PM</option>
+              <option value="04:00 PM - 06:00 PM">04:00 PM - 06:00 PM</option>
+              <option value="06:00 PM - 08:00 PM">06:00 PM - 08:00 PM</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn--gold btn--full" id="bookingSubmit">Confirm Reservation</button>
+        </form>
+      </div>
+
+      <!-- SUCCESS SCREEN -->
+      <div class="booking-modal__success" id="bookingSuccess">
+        <div class="success-icon">
+          <svg viewBox="0 0 52 52">
+            <circle class="success-circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="success-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+          </svg>
+        </div>
+        <h3>Reservation <em>Requested</em></h3>
+        <p>Thank you! Your booking request has been submitted successfully. We will call you shortly to confirm your slot.</p>
+        <button class="btn btn--ghost" id="successClose">Close Window</button>
+      </div>
+    </div>
+  </div>
+  <div class="booking-modal__backdrop" id="bookingBackdrop"></div>
+
   <!-- GSAP, ScrollTrigger, and Lenis -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

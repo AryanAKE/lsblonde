@@ -555,3 +555,73 @@ qsa('.scard:not(.scard--list)').forEach(card => {
 })();
 
 
+/* =====================================================
+   18. INTERACTIVE QUICK BOOKING MODAL
+   ===================================================== */
+(function bookingModal() {
+  const modal = qs('#bookingModal');
+  const backdrop = qs('#bookingBackdrop');
+  const closeBtn = qs('#bookingClose');
+  const successCloseBtn = qs('#successClose');
+  const form = qs('#bookingForm');
+  const modalBody = qs('#bookingModalBody');
+  const successScreen = qs('#bookingSuccess');
+  
+  const bookTriggers = qsa('#headerCta, #ctaStripBtn');
+
+  if (!modal || !backdrop) return;
+
+  const dateInput = qs('#bookingDate');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+  }
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    modal.classList.add('open');
+    backdrop.classList.add('open');
+    if (typeof lenis !== 'undefined') lenis.stop();
+    
+    form.reset();
+    modalBody.style.display = 'block';
+    successScreen.style.display = 'none';
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    backdrop.classList.remove('open');
+    if (typeof lenis !== 'undefined') lenis.start();
+  }
+
+  bookTriggers.forEach(btn => on(btn, 'click', openModal));
+  on(closeBtn, 'click', closeModal);
+  on(backdrop, 'click', closeModal);
+  on(successCloseBtn, 'click', closeModal);
+
+  on(form, 'submit', e => {
+    e.preventDefault();
+    
+    gsap.to(modalBody, {
+      opacity: 0,
+      duration: 0.3,
+      onComplete: () => {
+        modalBody.style.display = 'none';
+        modalBody.style.opacity = 1;
+        successScreen.style.display = 'flex';
+        
+        gsap.fromTo('.success-circle', 
+          { strokeDashoffset: 157 },
+          { strokeDashoffset: 0, duration: 0.6, ease: 'power2.out' }
+        );
+        gsap.fromTo('.success-check', 
+          { strokeDashoffset: 48 },
+          { strokeDashoffset: 0, duration: 0.4, delay: 0.5, ease: 'power2.out' }
+        );
+      }
+    });
+  });
+})();
+
+
+
