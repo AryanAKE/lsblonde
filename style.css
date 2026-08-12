@@ -1356,3 +1356,69 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
   .booking-modal__title { font-size: 1.8rem; }
 }
 
+/* ======================================================
+   PRICING ACCORDION STYLES
+   ====================================================== */
+.pricing-accordion {
+  margin-top: 6rem;
+  padding: 0 2rem;
+}
+.pricing-accordion__title {
+  font-family: var(--ff-display); font-size: 2rem; font-weight: 400;
+  text-align: center; color: var(--white); margin-bottom: 3rem;
+}
+.pricing-accordion__title em { font-style: italic; color: var(--gold); }
+
+.p-accordion {
+  display: flex; flex-direction: column; gap: 1rem; max-width: 900px; margin: 0 auto;
+}
+.p-accordion__item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px; overflow: hidden;
+  transition: border-color 0.3s var(--ease-out), background 0.3s;
+}
+.p-accordion__item:hover {
+  border-color: rgba(212, 175, 55, 0.25);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.p-accordion__header {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 1.5rem 2rem; font-family: var(--ff-sans); font-size: 1.1rem;
+  font-weight: 500; color: var(--white); text-align: left;
+  transition: color 0.3s; cursor: pointer;
+  background: transparent;
+}
+.p-accordion__header:hover { color: var(--gold-lt); }
+
+.p-accordion__icon {
+  position: relative; width: 14px; height: 14px;
+}
+.p-accordion__icon::before, .p-accordion__icon::after {
+  content: ''; position: absolute; background: var(--gold);
+  transition: transform 0.35s var(--ease-out);
+}
+.p-accordion__icon::before { top: 6.5px; left: 0; width: 100%; height: 1px; }
+.p-accordion__icon::after { top: 0; left: 6.5px; width: 1px; height: 100%; }
+
+.p-accordion__item.active .p-accordion__icon::after { transform: rotate(90deg) scaleY(0); }
+.p-accordion__item.active .p-accordion__icon::before { transform: rotate(180deg); }
+.p-accordion__item.active { border-color: rgba(212, 175, 55, 0.4); background: rgba(212, 175, 55, 0.02); }
+
+.p-accordion__content {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s var(--ease-out);
+}
+
+.p-list {
+  padding: 0 2rem 2rem; display: flex; flex-direction: column; gap: 0.9rem;
+}
+.p-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08); padding-bottom: 0.6rem;
+}
+.p-item span { font-size: 0.95rem; color: var(--text); }
+.p-item strong { font-family: var(--ff-sans); font-size: 0.95rem; color: var(--gold); font-weight: 600; }
+
+

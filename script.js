@@ -624,4 +624,33 @@ qsa('.scard:not(.scard--list)').forEach(card => {
 })();
 
 
+/* =====================================================
+   19. PRICING ACCORDION LOGIC
+   ===================================================== */
+(function pricingAccordion() {
+  const items = qsa('.p-accordion__item');
+  items.forEach(item => {
+    const header = qs('.p-accordion__header', item);
+    const content = qs('.p-accordion__content', item);
+    if (!header || !content) return;
+    
+    on(header, 'click', () => {
+      const active = item.classList.contains('active');
+      
+      items.forEach(otherItem => {
+        otherItem.classList.remove('active');
+        const otherContent = qs('.p-accordion__content', otherItem);
+        if (otherContent) otherContent.style.maxHeight = null;
+      });
+      
+      if (!active) {
+        item.classList.add('active');
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+    });
+  });
+})();
+
+
+
 
