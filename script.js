@@ -76,12 +76,33 @@ const on  = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
     requestAnimationFrame(follow);
   })();
 
+  const badgeEl = qs('#cursorBadge', curEl);
   const hoverEls = 'a, button, .scard, .rcard, .mosaic__item, .pill';
   on(document, 'mouseover', e => {
-    if (e.target.closest(hoverEls)) curEl.classList.add('is-hover');
+    const target = e.target.closest(hoverEls);
+    if (!target) return;
+    
+    curEl.classList.add('is-hover');
+    if (badgeEl) {
+      if (e.target.closest('.mosaic__item')) {
+        badgeEl.textContent = 'View';
+        curEl.classList.add('has-badge');
+      } else if (e.target.closest('#headerCta, #ctaStripBtn, #scardEnquireBtn')) {
+        badgeEl.textContent = 'Book';
+        curEl.classList.add('has-badge');
+      } else if (e.target.closest('.scard, #heroExploreBtn')) {
+        badgeEl.textContent = 'Explore';
+        curEl.classList.add('has-badge');
+      }
+    }
   });
   on(document, 'mouseout', e => {
-    if (e.target.closest(hoverEls)) curEl.classList.remove('is-hover');
+    const target = e.target.closest(hoverEls);
+    if (!target) return;
+    
+    curEl.classList.remove('is-hover');
+    curEl.classList.remove('has-badge');
+    if (badgeEl) badgeEl.textContent = '';
   });
   on(document, 'mousedown', () => curEl.classList.add('is-click'));
   on(document, 'mouseup',   () => curEl.classList.remove('is-click'));
