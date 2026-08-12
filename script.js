@@ -516,3 +516,42 @@ qsa('.scard:not(.scard--list)').forEach(card => {
   }
 })();
 
+
+/* =====================================================
+   17. DYNAMIC OPEN/CLOSED STATUS INDICATOR
+   ===================================================== */
+(function dynamicStatus() {
+  const statusText = qs('#statusText');
+  const statusPulse = qs('#statusPulse');
+  const statusTag = qs('#heroStatusTag');
+  if (!statusText || !statusPulse) return;
+
+  function updateStatus() {
+    const now = new Date();
+    const day = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+    const hour = now.getHours();
+    
+    const isOpenDay = day !== 1; // Closed Monday
+    const isOpenHour = hour >= 10 && hour < 20; // 10 AM to 8 PM
+
+    if (isOpenDay && isOpenHour) {
+      statusText.textContent = `Open Now · Closes at 8 PM`;
+      statusPulse.classList.remove('closed-dot');
+      statusTag?.classList.remove('closed-tag');
+    } else {
+      let nextDayText = "tomorrow at 10 AM";
+      if (day === 1) {
+        nextDayText = "Tuesday at 10 AM";
+      } else if (day === 0 && hour >= 20) {
+        nextDayText = "Tuesday at 10 AM";
+      }
+      statusText.textContent = `Closed · Opens ${nextDayText}`;
+      statusPulse.classList.add('closed-dot');
+      statusTag?.classList.add('closed-tag');
+    }
+  }
+  updateStatus();
+  setInterval(updateStatus, 60000);
+})();
+
+

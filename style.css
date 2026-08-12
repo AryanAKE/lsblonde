@@ -402,6 +402,16 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
   0%,100%{ box-shadow:0 0 0 0 rgba(212,175,55,.6); }
   50%    { box-shadow:0 0 0 6px rgba(212,175,55,0); }
 }
+.dot-pulse.closed-dot {
+  background: #ff453a !important;
+  animation: none !important;
+  box-shadow: none !important;
+}
+.hero__tag.closed-tag {
+  background: rgba(255, 69, 58, 0.1) !important;
+  border: 1px solid rgba(255, 69, 58, 0.2) !important;
+  color: #ff9f0a !important;
+}
 
 .hero__title {
   font-family: var(--ff-display);
