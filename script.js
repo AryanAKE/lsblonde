@@ -675,5 +675,74 @@ qsa('.scard:not(.scard--list)').forEach(card => {
 })();
 
 
+/* =====================================================
+   20. SERVICE PACKAGE CALCULATOR
+   ===================================================== */
+(function packageCalculator() {
+  const checkboxes = qsa('#packageCalc input[type="checkbox"]');
+  const summaryList = qs('#calcSummaryList');
+  const totalPriceEl = qs('#calcTotalPrice');
+  const totalTimeEl = qs('#calcTotalTime');
+  const bookBtn = qs('#calcBookBtn');
+
+  if (!checkboxes.length || !summaryList || !totalPriceEl || !totalTimeEl || !bookBtn) return;
+
+  function updateEstimate() {
+    let totalPrice = 0;
+    let totalTime = 0;
+    let selectedItems = [];
+
+    checkboxes.forEach(cb => {
+      if (cb.checked) {
+        const price = parseInt(cb.dataset.price, 10);
+        const time = parseInt(cb.dataset.time, 10);
+        const name = cb.dataset.name;
+        
+        totalPrice += price;
+        totalTime += time;
+        selectedItems.push({ name, price, time });
+      }
+    });
+
+    summaryList.innerHTML = '';
+    if (selectedItems.length === 0) {
+      summaryList.innerHTML = '<p class="calc-summary__empty">No services selected yet.</p>';
+      bookBtn.disabled = true;
+    } else {
+      selectedItems.forEach(item => {
+        const itemEl = document.createElement('div');
+        itemEl.className = 'calc-summary__item';
+        itemEl.innerHTML = `<strong>${item.name}</strong><span>₹${item.price}</span>`;
+        summaryList.appendChild(itemEl);
+      });
+      bookBtn.disabled = false;
+    }
+
+    totalPriceEl.textContent = `₹${totalPrice}`;
+    
+    if (totalTime >= 60) {
+      const hrs = Math.floor(totalTime / 60);
+      const mins = totalTime % 60;
+      totalTimeEl.textContent = mins > 0 ? `${hrs}h ${mins}m` : `${hrs}h`;
+    } else {
+      totalTimeEl.textContent = `${totalTime} mins`;
+    }
+  }
+
+  checkboxes.forEach(cb => on(cb, 'change', updateEstimate));
+
+  on(bookBtn, 'click', () => {
+    const bookModalBtn = qs('#headerCta');
+    if (bookModalBtn) bookModalBtn.click();
+    
+    const serviceSelect = qs('#bookingService');
+    if (serviceSelect) {
+      serviceSelect.value = "Other Salon Service";
+    }
+  });
+})();
+
+
+
 
 

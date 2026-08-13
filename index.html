@@ -379,6 +379,94 @@
 
         </div>
       </div>
+
+      <!-- SERVICE PACKAGE ESTIMATOR -->
+      <div class="package-calc container reveal-up" id="packageCalc">
+        <div class="package-calc__inner">
+          <div class="package-calc__left">
+            <h3 class="package-calc__title">Estimate Your <em>Custom</em> Package</h3>
+            <p class="package-calc__desc">Select the services you're interested in to calculate a dynamic cost and duration estimate.</p>
+            
+            <div class="calc-options">
+              <div class="calc-category">
+                <h4>Hair &amp; Styling</h4>
+                <label class="calc-item">
+                  <input type="checkbox" data-price="450" data-time="30" data-name="Classic Haircut (Men)" />
+                  <span class="calc-item__custom-box"></span>
+                  <span class="calc-item__name">Classic Haircut (Men)</span>
+                  <span class="calc-item__price">₹450 · 30m</span>
+                </label>
+                <label class="calc-item">
+                  <input type="checkbox" data-price="900" data-time="45" data-name="Stylist Haircut (Women)" />
+                  <span class="calc-item__custom-box"></span>
+                  <span class="calc-item__name">Stylist Haircut (Women)</span>
+                  <span class="calc-item__price">₹900 · 45m</span>
+                </label>
+                <label class="calc-item">
+                  <input type="checkbox" data-price="600" data-time="30" data-name="Blowdry &amp; Styling" />
+                  <span class="calc-item__custom-box"></span>
+                  <span class="calc-item__name">Blowdry &amp; Styling</span>
+                  <span class="calc-item__price">₹600 · 30m</span>
+                </label>
+                <label class="calc-item">
+                  <input type="checkbox" data-price="1200" data-time="45" data-name="Hair Spa" />
+                  <span class="calc-item__custom-box"></span>
+                  <span class="calc-item__name">Hair Spa</span>
+                  <span class="calc-item__price">₹1200 · 45m</span>
+                </label>
+              </div>
+
+              <div class="calc-category">
+                <h4>Color &amp; Skincare</h4>
+                <label class="calc-item">
+                  <input type="checkbox" data-price="2800" data-time="120" data-name="Global Hair Color" />
+                  <span class="calc-item__custom-box"></span>
+                  <span class="calc-item__name">Global Hair Color</span>
+                  <span class="calc-item__price">₹2800 · 2h</span>
+                </label>
+                <label class="calc-item">
+                  <input type="checkbox" data-price="1800" data-time="60" data-name="Premium Gold Facial" />
+                  <span class="calc-item__custom-box"></span>
+                  <span class="calc-item__name">Premium Gold Facial</span>
+                  <span class="calc-item__price">₹1800 · 60m</span>
+                </label>
+                <label class="calc-item">
+                  <input type="checkbox" data-price="3500" data-time="75" data-name="Luxury HydraFacial" />
+                  <span class="calc-item__custom-box"></span>
+                  <span class="calc-item__name">Luxury HydraFacial</span>
+                  <span class="calc-item__price">₹3500 · 75m</span>
+                </label>
+                <label class="calc-item">
+                  <input type="checkbox" data-price="8000" data-time="180" data-name="Bridal Makeup HD" />
+                  <span class="calc-item__custom-box"></span>
+                  <span class="calc-item__name">Bridal Makeup HD</span>
+                  <span class="calc-item__price">₹8000 · 3h</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="package-calc__right">
+            <div class="calc-summary">
+              <h4>Your Summary</h4>
+              <div class="calc-summary__list" id="calcSummaryList">
+                <p class="calc-summary__empty">No services selected yet.</p>
+              </div>
+              <div class="calc-summary__totals">
+                <div class="calc-total">
+                  <span>Estimated Total</span>
+                  <strong id="calcTotalPrice">₹0</strong>
+                </div>
+                <div class="calc-total">
+                  <span>Estimated Time</span>
+                  <strong id="calcTotalTime">0 mins</strong>
+                </div>
+              </div>
+              <button class="btn btn--gold btn--full" id="calcBookBtn" disabled>Book Selected Package</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===================== GALLERY / OUR WORK ===================== -->
