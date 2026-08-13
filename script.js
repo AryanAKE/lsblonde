@@ -743,6 +743,57 @@ qsa('.scard:not(.scard--list)').forEach(card => {
 })();
 
 
+/* =====================================================
+   21. GALLERY DYNAMIC FILTERING
+   ===================================================== */
+(function galleryFilters() {
+  const filters = qsa('.work__filter');
+  const items = qsa('.work__item');
+  const track = qs('#galleryTrack');
+  if (!filters.length || !items.length || !track) return;
+
+  filters.forEach(btn => {
+    on(btn, 'click', () => {
+      filters.forEach(f => f.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.dataset.filter;
+
+      const tl = gsap.timeline({
+        onComplete: () => {
+          ScrollTrigger.refresh();
+        }
+      });
+
+      items.forEach(item => {
+        const cat = item.dataset.category;
+        const matches = filterValue === 'all' || cat === filterValue;
+
+        if (matches) {
+          item.style.display = 'block';
+          tl.to(item, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            clearProps: 'transform,opacity'
+          }, 0);
+        } else {
+          tl.to(item, {
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.4,
+            onComplete: () => {
+              item.style.display = 'none';
+            }
+          }, 0);
+        }
+      });
+    });
+  });
+})();
+
+
+
 
 
 

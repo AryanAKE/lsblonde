@@ -722,6 +722,43 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
 .work__head {
   margin-bottom: 3rem;
   padding: 0 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+}
+.work__filters {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.work__filter {
+  font-family: var(--ff-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  transition: all 0.3s var(--ease-out);
+  cursor: pointer;
+  background: transparent;
+}
+.work__filter:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  color: var(--gold-lt);
+}
+.work__filter.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+@media (max-width: 768px) {
+  .work__head { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .work__filters { margin-bottom: 0; }
 }
 .work__horizontal-wrap {
   width: 100%;

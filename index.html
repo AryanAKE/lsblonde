@@ -473,36 +473,46 @@
     <section class="work" id="work">
       <div class="work__pinned">
         <div class="container work__head">
-          <p class="label">Portfolio</p>
-          <h2 class="heading">Transformations We're <em>Proud Of</em></h2>
+          <div class="work__head-left">
+            <p class="label">Portfolio</p>
+            <h2 class="heading">Transformations We're <em>Proud Of</em></h2>
+          </div>
+          <div class="work__filters">
+            <button class="work__filter active" data-filter="all">All</button>
+            <button class="work__filter" data-filter="styling">Styling</button>
+            <button class="work__filter" data-filter="haircut">Haircuts</button>
+            <button class="work__filter" data-filter="color">Color</button>
+            <button class="work__filter" data-filter="makeup">Makeup</button>
+            <button class="work__filter" data-filter="space">Space</button>
+          </div>
         </div>
         <div class="work__horizontal-wrap">
-          <div class="work__track">
-            <div class="mosaic__item work__item" id="gal-1" data-caption="Hair Styling">
+          <div class="work__track" id="galleryTrack">
+            <div class="mosaic__item work__item" id="gal-1" data-caption="Hair Styling" data-category="styling">
               <img src="hair-service.png" alt="Hair styling" loading="lazy" />
               <div class="mosaic__overlay"><span>Hair Styling</span></div>
             </div>
-            <div class="mosaic__item work__item" id="gal-2" data-caption="Precision Haircut">
+            <div class="mosaic__item work__item" id="gal-2" data-caption="Precision Haircut" data-category="haircut">
               <img src="haircut.png" alt="Haircut" loading="lazy" />
               <div class="mosaic__overlay"><span>Precision Haircut</span></div>
             </div>
-            <div class="mosaic__item work__item" id="gal-3" data-caption="Hair Color Treatment">
+            <div class="mosaic__item work__item" id="gal-3" data-caption="Hair Color Treatment" data-category="color">
               <img src="color-treatment.png" alt="Hair color" loading="lazy" />
               <div class="mosaic__overlay"><span>Color Treatment</span></div>
             </div>
-            <div class="mosaic__item work__item" id="gal-4" data-caption="Bridal Glam">
+            <div class="mosaic__item work__item" id="gal-4" data-caption="Bridal Glam" data-category="makeup">
               <img src="bridal-makeup.png" alt="Bridal makeup" loading="lazy" />
               <div class="mosaic__overlay"><span>Bridal Glam</span></div>
             </div>
-            <div class="mosaic__item work__item" id="gal-5" data-caption="Spa & Facial">
+            <div class="mosaic__item work__item" id="gal-5" data-caption="Spa & Facial" data-category="space">
               <img src="facial-spa.png" alt="Facial spa" loading="lazy" />
               <div class="mosaic__overlay"><span>Spa &amp; Facial</span></div>
             </div>
-            <div class="mosaic__item work__item" id="gal-6" data-caption="Men's Grooming">
+            <div class="mosaic__item work__item" id="gal-6" data-caption="Men's Grooming" data-category="haircut">
               <img src="mens-grooming.png" alt="Men's grooming" loading="lazy" />
               <div class="mosaic__overlay"><span>Men's Grooming</span></div>
             </div>
-            <div class="mosaic__item work__item" id="gal-7" data-caption="Our Salon Space">
+            <div class="mosaic__item work__item" id="gal-7" data-caption="Our Salon Space" data-category="space">
               <img src="salon-interior.png" alt="Our Space" loading="lazy" />
               <div class="mosaic__overlay"><span>Our Space</span></div>
             </div>
