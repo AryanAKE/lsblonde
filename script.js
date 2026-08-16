@@ -792,8 +792,12 @@ qsa('.scard:not(.scard--list)').forEach(card => {
   });
 })();
 
-
-
-
+/* =====================================================
+   MISC — Dynamic Copyright Year
+   ===================================================== */
+(function setCopyrightYear() {
+  const el = qs('#currentYear');
+  if (el) el.textContent = new Date().getFullYear();
+})();
 
 
