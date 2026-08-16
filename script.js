@@ -800,4 +800,29 @@ qsa('.scard:not(.scard--list)').forEach(card => {
   if (el) el.textContent = new Date().getFullYear();
 })();
 
+/* =====================================================
+   MISC — Back To Top Button
+   ===================================================== */
+(function backToTop() {
+  const btn      = qs('#backToTop');
+  const ring     = qs('#backToTopProgress');
+  if (!btn || !ring) return;
 
+  const circumference = 125.6; // 2 * π * 20
+
+  on(window, 'scroll', () => {
+    const scrolled = window.scrollY;
+    const total    = document.body.scrollHeight - window.innerHeight;
+    const progress = scrolled / total;
+
+    // Show / hide button
+    btn.classList.toggle('visible', scrolled > 400);
+
+    // Update progress ring
+    ring.style.strokeDashoffset = circumference - (progress * circumference);
+  }, { passive: true });
+
+  on(btn, 'click', () => {
+    lenis.scrollTo(0, { duration: 1.4 });
+  });
+})();

@@ -1615,6 +1615,48 @@ button { cursor:none; border:none; background:none; font-family:inherit; }
 @media (max-width: 580px) {
   .calc-options { grid-template-columns: 1fr; }
 }
-
-
-
+/* ---- BACK TO TOP ---- */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+  transform: translateY(12px);
+  cursor: none;
+}
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  transform: translateY(-3px) scale(1.08);
+}
+.back-to-top__progress {
+  position: absolute;
+  top: 0; left: 0;
+  width: 48px; height: 48px;
+  transform: rotate(-90deg);
+}
+.back-to-top__circle {
+  transition: stroke-dashoffset 0.15s linear;
+}
+.back-to-top__arrow {
+  font-size: 1.1rem;
+  color: var(--gold);
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s var(--ease-out);
+}
+.back-to-top:hover .back-to-top__arrow {
+  transform: translateY(-2px);
+}
